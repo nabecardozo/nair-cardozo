@@ -63,6 +63,58 @@ function mostrarPrecioFinal(precioIngresado,ivaCalculado){
 
 mostrarPrecioFinal(precioMedicina,iva);
 
+const tensiometro = [
+    {
+        isbn:"2536253",
+        accesorio:"tensiometro",
+        tipo:"manual",
+        marca:"Coronet",
+        modelo:"Bd/572",
+        precio:2500
+    },
+    {
+        isbn:"1225432",
+        accesorio:"tensiometro",
+        tipo:"digital",
+        marca:"Omicron",
+        modelo:"M2 basic",
+        precio:13000
+    },
+    {
+        isbn:"3332345",
+        accesorio:"tensiometro",
+        tipo:"digital",
+        marca:"Aspen",
+        modelo:"As 102",
+        precio:13200
+    },
+    {
+        isbn:"4677999",
+        accesorio:"tensiometro",
+        tipo:"manual",
+        marca:"Maverich",
+        modelo:"YE8600",
+        precio:4800
+    }
+];
+
+//forEach
+tensiometro.forEach((tensio)=> console.log(tensio.marca));
+
+//find
+const encontrado = tensiometro.find((tensio)=> tensio.marca== "Coronet");
+console.log(encontrado);
+
+const encontrado1 = tensiometro.find((tensio)=> tensio.marca== "klonal");
+
+//filter
+const economico = tensiometro.filter((tensio) => tensio.precio <3000);
+console.log(economico);
+
+
+
+
+
 
 
 
