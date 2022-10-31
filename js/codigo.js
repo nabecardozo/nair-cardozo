@@ -1,3 +1,4 @@
+/*
 //ingreso usuario
 for (let i=1; i<=3; i++){
     let usuario=prompt("ingresa usuario");
@@ -40,7 +41,7 @@ while (fruta !="salir"){
     }
     fruta=prompt("precisa alguna otra medicación ??? te dire el precio por caja x30compr( escriba {salir} para finalizar)");
 }
-alert("gracias por su compra")
+alert("gracias por su compra");
 console.log("finalizo compra!");
 
 //funcion con parametro y RETURN
@@ -62,6 +63,7 @@ function mostrarPrecioFinal(precioIngresado,ivaCalculado){
 }
 
 mostrarPrecioFinal(precioMedicina,iva);
+*/
 
 const tensiometro = [
     {
@@ -111,8 +113,8 @@ const encontrado1 = tensiometro.find((tensio)=> tensio.marca== "klonal");
 const economico = tensiometro.filter((tensio) => tensio.precio <3000);
 console.log(economico);
 
-
-
+//dom
+console.dir(document.body);
 
 
 
