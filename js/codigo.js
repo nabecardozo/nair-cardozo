@@ -1,4 +1,4 @@
-/*
+
 //ingreso usuario
 for (let i=1; i<=3; i++){
     let usuario=prompt("ingresa usuario");
@@ -63,60 +63,87 @@ function mostrarPrecioFinal(precioIngresado,ivaCalculado){
 }
 
 mostrarPrecioFinal(precioMedicina,iva);
-*/
 
-const tensiometro = [
-    {
-        isbn:"2536253",
-        accesorio:"tensiometro",
-        tipo:"manual",
-        marca:"Coronet",
-        modelo:"Bd/572",
-        precio:2500
-    },
-    {
-        isbn:"1225432",
-        accesorio:"tensiometro",
-        tipo:"digital",
-        marca:"Omicron",
-        modelo:"M2 basic",
-        precio:13000
-    },
-    {
-        isbn:"3332345",
-        accesorio:"tensiometro",
-        tipo:"digital",
-        marca:"Aspen",
-        modelo:"As 102",
-        precio:13200
-    },
-    {
-        isbn:"4677999",
-        accesorio:"tensiometro",
-        tipo:"manual",
-        marca:"Maverich",
-        modelo:"YE8600",
-        precio:4800
-    }
-];
+
+//RECORDAR!!
 
 //forEach
-tensiometro.forEach((tensio)=> console.log(tensio.marca));
+//tensiometro.forEach((tensio)=> console.log(tensio.marca));
 
 //find
-const encontrado = tensiometro.find((tensio)=> tensio.marca== "Coronet");
-console.log(encontrado);
+//const encontrado = tensiometro.find((tensio)=> tensio.marca== "Coronet");
+//console.log(encontrado);
 
-const encontrado1 = tensiometro.find((tensio)=> tensio.marca== "klonal");
+//const encontrado1 = tensiometro.find((tensio)=> tensio.marca== "klonal");
 
 //filter
-const economico = tensiometro.filter((tensio) => tensio.precio <3000);
-console.log(economico);
+//const economico = tensiometro.filter((tensio) => tensio.precio <3000);
+//console.log(economico);
 
+
+    
 //dom
 console.dir(document.body);
 
+let  titulo = document.getElementById("titulo");
+console.log(titulo.innerText);
+titulo.innerText="FARMACIA ONLINE!";
+titulo.style.font="bold 40px monospace";
+titulo.style.textAlign="center";
+
+//cambiar innerHTML
+let articulo =document.getElementById("accesorio");
+console.log(articulo.innerHTML);
+articulo.innerHTML += "<h1>ACCESORIOS</h1>"
+
+//color
+let seccion = document.getElementById("body-principal");
+console.log(seccion.innerHTML);
+seccion.style.background="dark";
+
+
+let probando=document.getElementById("titulo");
+console.log(probando.innerHTML);
 
 
 
+//aqui comienza la tabla
+let campoTensiometro = document.getElementById("empresa");
+let campoStock = document.getElementById("cantidad");
+
+campoTensiometro.value = "MARCAS";
+campoStock.value = 19;
+
+//array de objetos literales
+const tensiometro =[ { id:1, nombre: "Coronet", precio:2500},
+                      { id:2, nombre: "Omicron", precio:13000},
+                      { id:3, nombre: "Aspen", precio:8000},
+                      { id:4, nombre: "Maverich", precio:25000},
+                      { id:5, nombre: "Klonal", precio:6000}
+];
+campoStock.value = tensiometro.length;
+
+//tabla
+let articuloTabla = document.getElementById("inferior");
+//creamos la tabla
+let tabla =document.createElement("table");
+tabla.className="table table-striped"
+let tablaBody = document.createElement("tBody");
+
+//recorro  el array de productos
+for (const tensio of tensiometro){
+    tablaBody.innerHTML += `
+    <tr>
+        <td>${tensio.id}</td>
+        <td>${tensio.nombre}</td>
+        <td>${tensio.precio}</td>
+    </tr>    
+
+    `;
+}
+tabla.append(tablaBody);
+articuloTabla.append(tabla);
+
+
+//aqui finaliza la tabla!!
 
