@@ -41,3 +41,4 @@ function agregarAlCarrito(productoAComprar){
     let totalCarrito = carrito.reduce((acumulador,prod) => acumulador+prod.precio,0);
    document.getElementById("total").innerText="total a pagar $"+ totalCarrito;
 }
+

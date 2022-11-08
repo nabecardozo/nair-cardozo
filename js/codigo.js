@@ -147,3 +147,10 @@ articuloTabla.append(tabla);
 
 //aqui finaliza la tabla!!
 
+const objetoJson = JSON.stringify(tensiometro);
+console.log(objetoJson);
+localStorage.setItem("accesorio",objetoJson);
+
+const delStorage = localStorage.getItem("accesorio");
+const jsonObjeto = JSON.parse(delStorage);
+console.log(jsonObjeto);
