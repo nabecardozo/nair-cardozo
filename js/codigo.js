@@ -147,6 +147,8 @@ articuloTabla.append(tabla);
 
 //aqui finaliza la tabla!!
 
+
+//json y localstorage
 const objetoJson = JSON.stringify(tensiometro);
 console.log(objetoJson);
 localStorage.setItem("accesorio",objetoJson);
@@ -154,3 +156,10 @@ localStorage.setItem("accesorio",objetoJson);
 const delStorage = localStorage.getItem("accesorio");
 const jsonObjeto = JSON.parse(delStorage);
 console.log(jsonObjeto);
+
+
+//operador de asigancion condicional, es un ejemplo !! sino paga envio retira en persona
+
+console.log("/n**oprador de asignacion condicional ||");
+let envio = localStorage.getItem("envio") || "retira en persona";
+console.log(envio);
