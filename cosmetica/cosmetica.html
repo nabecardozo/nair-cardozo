@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <!--toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>cosmetica</title>
 </head>
 <body>
@@ -37,9 +38,11 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>precio</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">precio</th>
+                        <th scope="col">Acción</th>
+
                     </tr>
                 </thead>
                 <tbody id="tablabody">
@@ -48,12 +51,19 @@
             </table>
             <h4 id="total">Total a pagar $</h4>
         </div>
+        <button id="finalizar" class="btn btn-sucess">Finalizar compra
+            
+        </button>
 
     </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="../js/productos.js"></script>
+    <!--sweet alert 2-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--toastify-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+   <!-- <script src="../js/productos.js"></script>--> 
     <script src="../js/cosmetica.js"></script>
 </body>
 </html>
