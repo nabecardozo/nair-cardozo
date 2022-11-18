@@ -94,7 +94,7 @@ titulo.style.textAlign="center";
 //cambiar innerHTML
 let articulo =document.getElementById("accesorio");
 console.log(articulo.innerHTML);
-articulo.innerHTML += "<h1>ACCESORIOS</h1>"
+articulo.innerHTML += "<h1>Accesorio</h1>"
 
 //color
 let seccion = document.getElementById("body-principal");
