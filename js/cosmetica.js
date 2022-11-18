@@ -1,5 +1,6 @@
 //after clase 9
 let productosJSON = [];
+
 let dolarCompra;
 
 //let carrito = [];
@@ -36,7 +37,7 @@ function dibujartabla() {
 //hasta aca ultimo after mas el let de carrito.json
 
 function renderizarProds() {
-    for (const producto of productos.JSON) {
+    for (const producto of productosJSON) {
         contenedor.innerHTML += `
         <div class="card col-sm-4">
           <img src=${producto.foto} class="card-img-top" alt="...">
@@ -131,7 +132,7 @@ function obtenerDolar() {
 
 //gestjson de productos.json
 async function obtenerJSON() {
-    const URLJSON="productos.json";
+    const URLJSON="../js/productos.json";
     const resp = await fetch(URLJSON);
     const data = await resp.json();
     productosJSON = data;

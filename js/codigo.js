@@ -1,4 +1,4 @@
-
+/*
 //ingreso usuario
 for (let i=1; i<=3; i++){
     let usuario=prompt("ingresa usuario");
@@ -63,7 +63,7 @@ function mostrarPrecioFinal(precioIngresado,ivaCalculado){
 }
 
 mostrarPrecioFinal(precioMedicina,iva);
-
+*/
 
 //RECORDAR!!
 
