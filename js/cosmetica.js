@@ -4,13 +4,13 @@ let dolarCompra;
 
 //let carrito = [];
 
-
+let totalCarrito;
 let contenedor = document.getElementById("misprods");
 let btnFin = document.getElementById("finalizar");
 //ultmo after
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-(carrito.length != 0) && dibujartabla();
+(carrito.length != 0) &&dibujartabla();
 obtenerDolar();
 
 function dibujartabla() {
@@ -35,8 +35,8 @@ function dibujartabla() {
 
 //hasta aca ultimo after mas el let de carrito.json
 
-function renderizarProductos() {
-    for (const producto of productos) {
+function renderizarProds() {
+    for (const producto of productos.JSON) {
         contenedor.innerHTML += `
         <div class="card col-sm-4">
           <img src=${producto.foto} class="card-img-top" alt="...">
@@ -50,7 +50,7 @@ function renderizarProductos() {
         `;
     }
     //eventos
-    productos.forEach((producto) => {
+    productosJSON.forEach(producto => {
         //evento para cada boton
         document.getElementById(`btn${producto.id}`).addEventListener("click", function () {
             agregarAlCarrito(producto);
@@ -58,8 +58,6 @@ function renderizarProductos() {
     })
 }
 
-
-renderizarProductos();
 
 function agregarAlCarrito(productoAComprar) {
     carrito.push(productoAComprar);
@@ -138,16 +136,29 @@ async function obtenerJSON() {
     const data = await resp.json();
     productosJSON = data;
     //ya tengo el dolar y los produtos renderizados, renderizo las cartas
-    renderizarProdus();
+    renderizarProds();
 }
 
 
 
 
+
+//CERRANDO COMPRA
+
 btnFin.onclick = () => {
+    if (carrito.length==0){
+        Swal.fire({
+            title:"El carro esta vacio",
+            text:"compre algun producto",
+            icon:"error",
+            showConfirmbutton: false,
+            timer:1500
+        })
+    }else{ 
     carrito = [];
     document.getElementById("tablabody").innerHTML = "";
-    document.getElementById("total").innerText = "total a pagar $: ";
+    let infoTotal = document.getElementById("total");
+    infoTotal.innerText= "total a pagar $: ";
     Toastify({
         text: "Compra en proceso",
         duration: 3000,
@@ -157,4 +168,6 @@ btnFin.onclick = () => {
         gravity: 'bottom',
         position: 'left'
     }).showToast();
-} 
+
+
+}  }
